@@ -37,25 +37,37 @@
             margin-right: 50px;
         }
     </style>
+    <script>
+        function showCity(){ 
+            let cities = document.getElementsByClassName("city");
+            let l = cities.length;
+            for (let i=0; i<l; i++) {
+            // on cache l'element
+            element.style.display= "none";
+            // n'importe quoi d'autre affiche l'element
+            element.style.display= "";
+            }    
+         }
+    </script>
 </head>
 <body>
     <h1>TP Météo HTML</h1>
 
     <div class="flex">
     
-        <div>
+        <div class="city" id="Paris">
         <h2>Paris</h2>
         <p>2°C, nuageux</p>
         <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/854644-84.png" alt="Temps Paris">
         </div>
 
-        <div>
+        <div class="city" id="Lyon">
         <h2>Lyon</h2>
         <p>5°C, quelques éclarcies</p>
         <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/854643-84.png" alt="Temps Lyon">
         </div>
 
-        <div>
+        <div class="city" id="Marseille">
         <h2>Marseille</h2>
         <p>7°C, ensoleillé</p>
         <img src="https://static.thenounproject.com/png/2891867-84.png" alt="Temps Marseille">
@@ -66,5 +78,16 @@
         <p>Lucas et Faouzi</p>
         <p>Météo Icones par <a target="_blank" href="https://thenounproject.com/search/collection/?q=weather">NounProject</a></p>
     </footer>
+
+    <label for="ville-select">Choisissez une ville:</label>
+
+    <select onchange=showCity()>
+        <option city="">--S'il vous plaît choissez une ville--</option>
+        <option city="Paris">Paris</option>
+        <option city="Lyon">Lyon</option>
+        <option city="Marseille">Marseille</option>
+    </select>
+
 </body>
 </html>
+
