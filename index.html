@@ -13,81 +13,68 @@
             text-align: center;
             padding-top: 50px;
         }
+        .Paris {
+            background:lightgrey;
+            font-size: 13px;
+            padding: 15px;
+        }
+        .Lyon {
+            background:lightgrey;
+            font-size: 13px;
+            padding: 15px;
+        }
+        .Marseille {
+            background:lightgrey;
+            font-size: 13px;
+            padding: 15px;
+        }
+        body {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        .flex {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            justify-content: space-between;
+            width:fit-content
+        }
+        .flex div{
+            margin:10px;    
+            flex: 1 1 auto;
+            
+
+        }
         footer {
             background: rgb(228, 224, 224, 0.829);
             font-family: sans-serif;
         }
-        .flex {
-            display: flex;
-            width: 1270px;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        .flex div {
-            width: 350px;
-            height: 200px;
-            background: rgba(228, 224, 224, 0.829);
-            font-family: sans-serif;
-            text-align: center;
-        }
-        body {
-            margin-top: 50px;
-            margin-bottom: 50px;
-            margin-left: 50px;
-            margin-right: 50px;
-        }
     </style>
-    <script>
-        function showCity(){ 
-            let cities = document.getElementsByClassName("city");
-            let l = cities.length;
-            for (let i=0; i<l; i++) {
-            // on cache l'element
-            element.style.display= "none";
-            // n'importe quoi d'autre affiche l'element
-            element.style.display= "";
-            }    
-         }
-    </script>
 </head>
 <body>
     <h1>TP Météo HTML</h1>
-
     <div class="flex">
-    
-        <div class="city" id="Paris">
-        <h2>Paris</h2>
-        <p>2°C, nuageux</p>
-        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/854644-84.png" alt="Temps Paris">
-        </div>
-
-        <div class="city" id="Lyon">
-        <h2>Lyon</h2>
-        <p>5°C, quelques éclarcies</p>
-        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/854643-84.png" alt="Temps Lyon">
-        </div>
-
-        <div class="city" id="Marseille">
-        <h2>Marseille</h2>
-        <p>7°C, ensoleillé</p>
-        <img src="https://static.thenounproject.com/png/2891867-84.png" alt="Temps Marseille">
-        </div>
-
+    <div class="Paris">
+    <h2>Paris</h2>
+    <p>2°C, nuageux</p>
+    <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/854644-84.png" alt="Temps Paris">
+    </div>
+    <div class="Lyon">
+    <h2>Lyon</h2>
+    <p>5°C, quelques éclarcies</p>
+    <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/854643-84.png" alt="Temps Paris">
+    </div>
+    <div class="Marseille">
+    <h2>Marseille</h2>
+    <p>7°C, ensoleillé</p>
+    <img src="https://static.thenounproject.com/png/2891867-84.png" alt="Temps Paris">
+    </div>
     </div>
     <footer>
         <p>Lucas et Faouzi</p>
         <p>Météo Icones par <a target="_blank" href="https://thenounproject.com/search/collection/?q=weather">NounProject</a></p>
     </footer>
-
-    <label for="ville-select">Choisissez une ville:</label>
-
-    <select onchange=showCity()>
-        <option city="">--S'il vous plaît choissez une ville--</option>
-        <option city="Paris">Paris</option>
-        <option city="Lyon">Lyon</option>
-        <option city="Marseille">Marseille</option>
-    </select>
-
 </body>
 </html>
 
