@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TP noté</title>
+    <!-- Faouzi Bendjoudi p2009434 et Lucas Milandre p2009282 -->
     <style>
         h1 {
             color:white;
@@ -13,17 +14,7 @@
             text-align: center;
             padding-top: 50px;
         }
-        .Paris {
-            background:lightgrey;
-            font-size: 13px;
-            padding: 15px;
-        }
-        .Lyon {
-            background:lightgrey;
-            font-size: 13px;
-            padding: 15px;
-        }
-        .Marseille {
+        .city {
             background:lightgrey;
             font-size: 13px;
             padding: 15px;
@@ -43,40 +34,85 @@
         .flex div{
             margin:10px;    
             flex: 1 1 auto;
-            
+            font-family: sans-serif;
 
+        }
+        label {
+            font-family: sans-serif;
         }
         footer {
             background: rgb(228, 224, 224, 0.829);
             font-family: sans-serif;
         }
     </style>
-        <script>
-            let villeCourante = "Lyon"
-            function showCity() { 
-                alert(villeCourante); 
+    <script type="text/javascript">
+    //    let villeCourante = "Lyon";
+    //  function showCity() { 
+    //      console.log(villeCourante); 
+    //        }
+
+        function showCity() {
+        // 1. Récupérer la valeur courante du menu 
+        // Pour ça on va faire :
+        
+        let nomVilleSelectionnee = document.getElementById("menu").value;
+
+        // 2. Récupérer la liste de toutes les div correspondant à une div de météo 
+        // Pour ça on va faire :
+
+        let cities = document.getElementsByClassName("city");
+        
+        // 3. Parcourir la liste des div et cacher celles qui ne sont pas sélectionnées.
+        // TODO : definir l : la taille max de votre tableau cities
+        for (i=0; i<3; i++) {
+            cities[i].style.display= "none";
+            if (cities[i].id == nomVilleSelectionnee) {
+            cities[i].style.display= "block";
+            } else {
+            cities[i].style.display= "none";
             }
-        </script>
+        }
+    }
+    </script>
 </head>
 <body>
     <h1>TP Météo HTML</h1>
-    <div class="flex">
-    <div class="Paris">
-    <h2>Paris</h2>
-    <p>2°C, nuageux</p>
-    <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/854644-84.png" alt="Temps Paris">
-    </div>
-    <div class="Lyon">
-    <h2>Lyon</h2>
-    <p>5°C, quelques éclarcies</p>
-    <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/854643-84.png" alt="Temps Paris">
-    </div>
-    <div class="Marseille">
-    <h2>Marseille</h2>
-    <p>7°C, ensoleillé</p>
-    <img src="https://static.thenounproject.com/png/2891867-84.png" alt="Temps Paris">
-    </div>
-    </div>
+
+    <label for="menu">Choisissez une ville:</label>
+
+    <select onchange=showCity() id="menu">
+        <option value="none">--S'il vous plaît choisissez une ville--</option>
+        <option value="1">Paris</option>
+        <option value="2">Lyon</option>
+        <option value="3">Marseille</option>
+    </select>
+
+    <section class="grille">
+
+        <div class="flex">
+
+            <div id="1" class="city">
+                <h2>Paris</h2>
+                <p>2°C, nuageux</p>
+                <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/854644-84.png" alt="Temps dans la ville de Paris">
+            </div>
+
+            <div id="2" class="city">
+                <h2>Lyon</h2>
+                <p>5°C, quelques éclaircies</p>
+                <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/854643-84.png" alt="Temps dans la ville de Lyon">
+            </div>
+
+            <div id="3" class="city">
+                <h2>Marseille</h2>
+                <p>7°C, ensoleillé</p>
+                <img src="https://static.thenounproject.com/png/2891867-84.png" alt="Temps dans la ville de Marseille">
+            </div>
+
+        </div>
+    
+    </section>
+
     <footer>
         <p>Lucas et Faouzi</p>
         <p>Météo Icones par <a target="_blank" href="https://thenounproject.com/search/collection/?q=weather">NounProject</a></p>
